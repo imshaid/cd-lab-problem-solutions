@@ -15,7 +15,7 @@ in
 Total Prepositions: 2
 
 Input:
-She went to school with her friend
+He went to school with his friend
 
 Output:
 Prepositions found:
