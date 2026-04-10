@@ -19,31 +19,35 @@ Output: Number of white spaces: 0
 --------------------------------------------------
 
 Explanation:
-This program reads a string character by character using getchar().
-It counts the number of white space characters.
+This program reads input character by character using getchar().
 
-White space includes:
-- Space ' '
-- Tab '\t'
-- Newline '\n' (optional, here we stop at newline)
+We use the built-in function isspace() from <ctype.h> to check
+whether a character is a whitespace or not.
 
-We mainly count spaces and tabs in this program.
+isspace() returns true for:
+- space ' '
+- tab '\t'
+- newline '\n'
+- vertical tab '\v'
+- form feed '\f'
+- carriage return '\r'
+
+We stop taking input at newline, so only spaces/tabs before Enter are counted.
 */
 
 #include <stdio.h>
+#include <ctype.h> // for isspace()
 
 int main()
 {
     int ch;             // to store each character
-    int whitespace = 0; // counter for white spaces
-
-    printf("Enter a string: ");
+    int whitespace = 0; // counter
 
     // Read input character by character
     while ((ch = getchar()) != '\n' && ch != EOF)
     {
-        // Check for space or tab
-        if (ch == ' ' || ch == '\t')
+        // Check if character is any whitespace
+        if (isspace(ch))
         {
             whitespace++;
         }
