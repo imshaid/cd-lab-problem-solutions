@@ -1,0 +1,23 @@
+# Ignore compiled output files
+*.exe
+*.out
+*.o
+
+# Ignore temporary files
+*.log
+*.tmp
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore editor/IDE folders
+.vscode/
+.idea/
+
+# Ignore Code::Blocks files (since you have .cph)
+*.cbp
+*.layout
+
+# Ignore CPH (Competitive Programming Helper)
+.cph/
