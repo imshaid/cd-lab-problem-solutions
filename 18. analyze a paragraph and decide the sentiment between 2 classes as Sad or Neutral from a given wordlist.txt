@@ -1,0 +1,150 @@
+Problem Statement:
+Write pseudocode that analyzes a paragraph and determines whether
+the sentiment is Sad or Neutral using a given wordlist.
+
+--------------------------------------------------
+Input:
+I feel so alone and lost in the dark. The pain is unbearable and I cry every night.
+
+SAD WORDS:
+["sad", "cry", "tears", "grief", "alone", "lost", "pain",
+ "hurt", "broken", "miss", "lonely", "empty", "dark",
+ "hopeless", "sorrow", "suffer", "regret", "despair",
+ "tired", "weak", "fail", "down", "gloomy", "mourn",
+ "depressed", "miserable", "worthless", "abandoned",
+ "heartbroken", "unfortunate", "unhappy", "melancholy"]
+
+Output (Step-wise Understanding):
+
+STEP 3 — Total words : 18
+
+STEP 4 — Cleaned     :
+  ["i","feel","so","alone","and","lost","in","the",
+   "dark","the","pain","is","unbearable","and","i","cry","every","night"]
+
+STEP 6 — Matched sad words:
+  "alone"  → sadCount = 1
+  "lost"   → sadCount = 2
+  "dark"   → sadCount = 3
+  "pain"   → sadCount = 4
+  "cry"    → sadCount = 5
+
+STEP 7 — Sad Score:
+  (5 / 18) * 100 = 27.7%
+
+STEP 8 — Threshold check:
+  27.7% >= 20% → SAD
+
+OUTPUT:
+  Total words         : 18
+  Sad words found     : 5
+  Sad score           : 27.7%
+  Matched sad words   : alone, lost, dark, pain, cry
+  Sentiment           : SAD
+--------------------------------------------------
+
+
+BEGIN SentimentAnalysis
+
+    INPUT paragraph
+
+    // -----------------------------------------------
+    // STEP 1: Handle empty input
+    // -----------------------------------------------
+    IF paragraph is empty THEN
+        PRINT "No input given. Cannot analyze sentiment."
+        STOP
+    END IF
+
+    // -----------------------------------------------
+    // STEP 2: Define word lists
+    // -----------------------------------------------
+    sadWords[] = ["sad", "cry", "tears", "grief", "alone",
+                  "lost", "pain", "hurt", "broken", "miss",
+                  "lonely", "empty", "dark", "hopeless",
+                  "sorrow", "suffer", "regret", "despair",
+                  "tired", "weak", "fail", "down", "gloomy",
+                  "mourn", "depressed", "miserable",
+                  "worthless", "abandoned", "heartbroken",
+                  "unfortunate", "unhappy", "melancholy"]
+
+    // -----------------------------------------------
+    // STEP 3: Tokenize paragraph into words
+    // -----------------------------------------------
+    words[] = SPLIT paragraph BY spaces
+    total   = COUNT of words[]
+
+    // -----------------------------------------------
+    // STEP 4: Clean each word
+    //         (convert to lowercase + strip punctuation)
+    // -----------------------------------------------
+    FOR i = 0 TO total - 1
+        words[i] = CONVERT words[i] TO lowercase
+        words[i] = REMOVE trailing punctuation from words[i]
+                   // ( . , ! ? ; : " ' )
+    END FOR
+
+    // -----------------------------------------------
+    // STEP 5: Initialize counters and matched list
+    // -----------------------------------------------
+    sadCount     = 0
+    matchedWords = empty list
+
+    // -----------------------------------------------
+    // STEP 6: Check each word against sad word list
+    // -----------------------------------------------
+    FOR i = 0 TO total - 1
+
+        FOR each sadWord IN sadWords[]
+
+            IF words[i] == sadWord THEN
+                sadCount++
+                ADD words[i] TO matchedWords
+                BREAK  // avoid double counting
+            END IF
+
+        END FOR
+
+    END FOR
+
+    // -----------------------------------------------
+    // STEP 7: Calculate sad score as percentage
+    // -----------------------------------------------
+    IF total > 0 THEN
+        sadScore = (sadCount / total) * 100
+    ELSE
+        sadScore = 0
+    END IF
+
+    // -----------------------------------------------
+    // STEP 8: Decide sentiment based on threshold
+    //
+    //   sadScore >= 20% --> SAD
+    //   sadScore <  20% --> NEUTRAL
+    //
+    // -----------------------------------------------
+    IF sadScore >= 20 THEN
+        sentiment = "SAD"
+    ELSE
+        sentiment = "NEUTRAL"
+    END IF
+
+    // -----------------------------------------------
+    // STEP 9: Display detailed results
+    // -----------------------------------------------
+    PRINT "--- Sentiment Analysis Report ---"
+    PRINT "Total words         : " + total
+    PRINT "Sad words found     : " + sadCount
+    PRINT "Sad score           : " + sadScore + "%"
+    PRINT ""
+
+    IF matchedWords is not empty THEN
+        PRINT "Matched sad words   : " + matchedWords
+    ELSE
+        PRINT "Matched sad words   : none"
+    END IF
+
+    PRINT ""
+    PRINT "Sentiment           : " + sentiment
+
+END SentimentAnalysis
