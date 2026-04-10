@@ -51,8 +51,6 @@ int main()
     int length = 0; // variable to store length of string
     int ch;         // variable to store each character (as integer)
 
-    printf("Enter a string: ");
-
     // Reading input character by character
     while ((ch = getchar()) != '\n' && ch != EOF)
     {
