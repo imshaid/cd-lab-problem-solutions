@@ -94,7 +94,8 @@ int main()
         i++;
     }
 
-    printf("\n\nTotal tokens: %d\n", count);
+    printf("\n");
+    printf("\nTotal tokens: %d\n", count);
 
     return 0;
 }
