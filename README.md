@@ -10,8 +10,8 @@
 
 ## Quick Stats
 
-| 18 Total Problems | 16 C Programs | 2 Pseudocode | 7 Topic Categories |
-| :---------------: | :-----------: | :----------: | :----------------: |
+| 18 Total Problems | 18 C Programs | 7 Topic Categories |
+| :---------------: | :-----------: | :----------------: |
 
 ---
 
@@ -35,9 +35,9 @@
 | 13  | Count prepositions from a string                   | Word Classification |
 | 14  | Check if RE `a*b` accepts the string               | Automata / DFA      |
 | 15  | Extract the digits from a string                   | Char Classification |
-| 16  | Generate the title of a paragraph _(pseudocode)_   | NLP                 |
+| 16  | Generate the title of a paragraph                  | NLP                 |
 | 17  | Extract conjunctions from a string                 | Word Classification |
-| 18  | Sentiment analysis — Sad or Neutral _(pseudocode)_ | NLP                 |
+| 18  | Sentiment analysis — Sad or Neutral                | NLP                 |
 
 ---
 
@@ -53,9 +53,9 @@ Core string operations without any fancy library stuff. Reading character-by-cha
 
 ### Character Classification — Problems 04, 15
 
-Classifying each character as vowel, consonant, digit, or symbol using `<ctype.h>`. Looks simple on the surface — shows up in every real lexer.
+Classifying each character as vowel, consonant, digit, or symbol. Looks simple on the surface — shows up in every real lexer.
 
-**Key concepts:** `isalpha()` · `isdigit()` · `tolower()` · `isspace()`
+**Key concepts:** vowel/consonant check · digit range check · char-by-char classification
 
 ---
 
@@ -83,7 +83,7 @@ The real compiler stuff. These simulate exactly what a Lexer does:
 
 Extracting and counting specific word types from natural language — articles (`a`, `an`, `the`), prepositions (`in`, `on`, `at`...), conjunctions (`and`, `or`, `but`...) — plus finding the most frequent word using manual word extraction.
 
-**Key concepts:** `strcmp()` · predefined word lists · frequency counting · manual tokenization
+**Key concepts:** predefined word lists · frequency counting · manual tokenization · string comparison
 
 ---
 
@@ -95,9 +95,9 @@ Simulates a **Deterministic Finite Automaton** in C to check if input matches th
 
 ---
 
-### NLP / Pseudocode — Problems 16, 18
+### NLP — Problems 16, 18
 
-Higher-level problems written as pseudocode:
+Higher-level problems implemented in C from pseudocode:
 
 - **Problem 16** — generates a paragraph title by finding the most frequent meaningful word after removing stop words
 - **Problem 18** — classifies text as **Sad** or **Neutral** using a predefined word list and a percentage-based threshold (≥20% sad words → SAD)
@@ -126,7 +126,7 @@ gcc -o out "01. count the length of a string.c"
 
 | Problem                   | How to stop input                                  |
 | ------------------------- | -------------------------------------------------- |
-| 06 (line counter)         | `Ctrl+D` (Linux/Mac) or `Ctrl+Z` (Windows)         |
+| 06 (line counter)         | Press Enter on an empty line                       |
 | 07, 08 (comment problems) | Press Enter on an empty line                       |
 | 14 (DFA)                  | Try `aaab`, `b`, `aabbb`, `abc` to test all states |
 
@@ -164,9 +164,9 @@ cd-lab-problem-solutions/
 ├── 13. count preposition from a given string.c
 ├── 14. check the RE is accepted or not.c
 ├── 15. extract the digits from a string.c
-├── 16. generate the title of a paragraph.txt
+├── 16. generate the title of a paragraph.c
 ├── 17. extract conjunctions from a given string.c
-├── 18. analyze a paragraph and decide the sentiment...txt
+├── 18. analyze a paragraph and decide the sentiment between 2 classes as Sad or Neutral from a given wordlist.c
 └── README.md
 ```
 
@@ -174,9 +174,10 @@ cd-lab-problem-solutions/
 
 ## Author
 
-**Imshaid**  
+**Shaid (~sURJO)**  
 CSE314 — Compiler Design Lab  
 Department of Computer Science & Engineering
+Daffodil International University, Dhaka
 
 ---
 
