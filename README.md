@@ -15,17 +15,6 @@
 
 ---
 
-## About This Repo
-
-```
-This repo contains 18 C programs for CSE314 Compiler Design Lab.
-Each file has the problem, the code, and test cases inside comments.
-Just open any file, read it, compile it, and run it.
-Made for lab final preparation.
-```
-
----
-
 ## All Problems
 
 | #   | Problem                                      | Topic               |
@@ -187,7 +176,7 @@ cd-lab-problem-solutions/
 
 **Shaid (~sURJO)**  
 CSE314 — Compiler Design Lab  
-Department of Computer Science & Engineering
+Department of Computer Science & Engineering  
 Daffodil International University, Dhaka
 
 ---
