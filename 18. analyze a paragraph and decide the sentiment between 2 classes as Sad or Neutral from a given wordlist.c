@@ -37,14 +37,10 @@ Matched sad words   : tired, down
 Sentiment           : NEUTRAL
 
 Input:
-
+(empty)
 
 Output:
-Total words         : 18
-Sad words found     : 5
-Sad score           : 27.7%
-Matched sad words   : alone, lost, dark, pain, cry
-Sentiment           : SAD
+No input given.
 --------------------------------------------------
 
 Explanation:
