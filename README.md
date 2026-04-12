@@ -15,29 +15,40 @@
 
 ---
 
+## About This Repo
+
+```
+This repo contains 18 C programs for CSE314 Compiler Design Lab.
+Each file has the problem, the code, and test cases inside comments.
+Just open any file, read it, compile it, and run it.
+Made for lab final preparation.
+```
+
+---
+
 ## All Problems
 
-| #   | Problem                                            | Topic               |
-| --- | -------------------------------------------------- | ------------------- |
-| 01  | Count the length of a string                       | String Basics       |
-| 02  | Count the number of white spaces                   | String Basics       |
-| 03  | Remove white space from a string                   | String Basics       |
-| 04  | Count vowels, consonants, and digits               | Char Classification |
-| 05a | Tokenize a string (using `strtok()`)               | Tokenization        |
-| 05b | Tokenize a string (without library function)       | Tokenization        |
-| 06  | Count the number of lines                          | String Basics       |
-| 07  | Identify the comments                              | Lexical Analysis    |
-| 08  | Remove single-line or multi-line comments          | Lexical Analysis    |
-| 09  | Max frequency of a word in a string                | Word Classification |
-| 10  | Check if identifier is valid or not                | Lexical Analysis    |
-| 11  | Count the articles                                 | Word Classification |
-| 12  | Extract prepositions from a string                 | Word Classification |
-| 13  | Count prepositions from a string                   | Word Classification |
-| 14  | Check if RE `a*b` accepts the string               | Automata / DFA      |
-| 15  | Extract the digits from a string                   | Char Classification |
-| 16  | Generate the title of a paragraph                  | NLP                 |
-| 17  | Extract conjunctions from a string                 | Word Classification |
-| 18  | Sentiment analysis — Sad or Neutral                | NLP                 |
+| #   | Problem                                      | Topic               |
+| --- | -------------------------------------------- | ------------------- |
+| 01  | Count the length of a string                 | String Basics       |
+| 02  | Count the number of white spaces             | String Basics       |
+| 03  | Remove white space from a string             | String Basics       |
+| 04  | Count vowels, consonants, and digits         | Char Classification |
+| 05a | Tokenize a string (using `strtok()`)         | Tokenization        |
+| 05b | Tokenize a string (without library function) | Tokenization        |
+| 06  | Count the number of lines                    | String Basics       |
+| 07  | Identify the comments                        | Lexical Analysis    |
+| 08  | Remove single-line or multi-line comments    | Lexical Analysis    |
+| 09  | Max frequency of a word in a string          | Word Classification |
+| 10  | Check if identifier is valid or not          | Lexical Analysis    |
+| 11  | Count the articles                           | Word Classification |
+| 12  | Extract prepositions from a string           | Word Classification |
+| 13  | Count prepositions from a string             | Word Classification |
+| 14  | Check if RE `a*b` accepts the string         | Automata / DFA      |
+| 15  | Extract the digits from a string             | Char Classification |
+| 16  | Generate the title of a paragraph            | NLP                 |
+| 17  | Extract conjunctions from a string           | Word Classification |
+| 18  | Sentiment analysis — Sad or Neutral          | NLP                 |
 
 ---
 
